@@ -1,0 +1,4 @@
+version: "1.0.0"
+description: "Digital Humidity and Temperature Sensor Driver for DHT11, AM2301 (DHT21, DHT22, AM2302, AM2321), and Itead Si7021"
+url: "https://github.com/zorxx/dht"
+license: "BSD-3-Clause"
