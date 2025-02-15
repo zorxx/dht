@@ -63,13 +63,18 @@ typedef enum
     DHT_TYPE_SI7021       //!< Itead Si7021
 } dht_sensor_type_t;
 
+#define DHT_TYPE_DHT21    DHT_TYPE_AM2301
+#define DHT_TYPE_DHT22    DHT_TYPE_AM2301
+#define DHT_TYPE_AM2302   DHT_TYPE_AM2301
+#define DHT_TYPE_AM2321   DHT_TYPE_AM2301
+
 /**
  * @brief Read integer data from sensor on specified pin
  *
  * Humidity and temperature are returned as integers.
  * For example: humidity=625 is 62.5 %, temperature=244 is 24.4 degrees Celsius
  *
- * @param sensor_type DHT11 or DHT22
+ * @param sensor_type DHT11, DHT_TYPE_AM2301, etc.
  * @param pin GPIO pin connected to sensor OUT
  * @param[out] humidity Humidity, percents * 10, nullable
  * @param[out] temperature Temperature, degrees Celsius * 10, nullable
@@ -83,7 +88,7 @@ esp_err_t dht_read_data(dht_sensor_type_t sensor_type, gpio_num_t pin,
  *
  * Humidity and temperature are returned as floats.
  *
- * @param sensor_type DHT11 or DHT22
+ * @param sensor_type DHT11, DHT_TYPE_AM2301, etc.
  * @param pin GPIO pin connected to sensor OUT
  * @param[out] humidity Humidity, percents, nullable
  * @param[out] temperature Temperature, degrees Celsius, nullable
